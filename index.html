@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marymua - Creatrice de beauté et de maquillage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap');
+        
+        :root {
+            --gold: #D4AF37;
+            --rose: #F8D7DA;
+            --noir: #1A1A1A;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--noir);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+        
+        .header-border {
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .label {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            letter-spacing: 1px;
+        }
+        
+        .label-nouveau {
+            background: var(--rose);
+            color: #721C24;
+        }
+        
+        .label-bestseller {
+            background: var(--gold);
+            color: white;
+        }
+        
+        .category-filter {
+            transition: all 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .category-filter:hover, .category-filter.active {
+            border-bottom: 2px solid var(--noir);
+        }
+        
+        .newsletter-input {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0;
+            padding-left: 0;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom: 1px solid var(--noir);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Top Bar -->
+    <div class="bg-black text-white text-center py-2 text-xs">
+        LIVRAISON OFFERTE À PARTIR DE 25000 FCFA | RETOURS GRATUITS
+    </div>
+    
+    <!-- Header -->
+    <header class="header-border">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Menu gauche -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="uppercase text-sm tracking-wider hover:underline">MAQUILLAGE</a>
+                    <a href="#" class="uppercase text-sm tracking-wider hover:underline">SOIN</a>
+                    <a href="#" class="uppercase text-sm tracking-wider hover:underline">COLLECTIONS</a>
+                </div>
+                
+                <!-- Logo -->
+                <div class="text-center flex-grow">
+                    <a href="#" class="text-3xl font-bold" style="font-family: 'Playfair Display', serif;">MARYMUA</a>
+                </div>
+                
+                <!-- Menu droit -->
+                <div class="flex items-center space-x-6">
+                    <a href="#"><i class="fas fa-search hover:opacity-70"></i></a>
+                    <a href="#"><i class="fas fa-user hover:opacity-70"></i></a>
+                    <a href="#"><i class="fas fa-shopping-bag hover:opacity-70"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="hero-overlay absolute inset-0 flex items-center">
+            <div class="container mx-auto px-6 text-white w-1/2">
+                <span class="uppercase tracking-widest text-sm mb-4 block">NOUVELLE COLLECTION</span>
+                <h1 class="text-5xl font-bold mb-6">LIPSTICK ROUGE VÉLOURS</h1>
+                <p class="text-lg mb-8 max-w-md">Une texture veloutée inégalée pour un mat confortable et longue tenue.</p>
+                <a href="#" class="bg-white text-black px-8 py-3 inline-block font-medium hover:bg-gray-100 transition">
+                    DÉCOUVRIR
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catégories -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-10 mb-12">
+                <a href="#" class="category-filter uppercase text-sm tracking-wider active">Tous</a>
+                <a href="#" class="category-filter uppercase text-sm tracking-wider">Lèvres</a>
+                <a href="#" class="category-filter uppercase text-sm tracking-wider">Yeux</a>
+                <a href="#" class="category-filter uppercase text-sm tracking-wider">Visage</a>
+                <a href="#" class="category-filter uppercase text-sm tracking-wider">Best-sellers</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Produit 1 avec changement de couleur -->
+<!-- Produit 1 avec changement d’image dynamique -->
+<div class="product-card relative">
+    <div class="relative pb-[125%] bg-gray-100">
+        <img id="lipstick-image"src="lipstick-rouge.png" 
+             alt="crayan a levre Mat" 
+             class="absolute h-full w-full object-cover transition duration-300 ease-in-out">
+        <span class="label label-nouveau">NOUVEAU</span>
+    </div>
+    <div class="mt-4 text-center">
+        <h3 class="font-medium">Mary Mua Lipstick</h3>
+        <p class="text-sm text-gray-600 mt-1">Crayon à lèvres mat</p>
+        <p class="font-bold mt-2">7000 FCFA</p>
+
+        <!-- Vignettes couleurs avec data-image -->
+        <div class="flex justify-center mt-3 space-x-2">
+            <button class="w-5 h-5 rounded-full border-2 border-white bg-red-600 shadow"
+                    data-image="lipstick-rouge.png"
+                    onclick="changeLipImage(this)"></button>
+            <button class="w-5 h-5 rounded-full border-2 border-white bg-pink-400 shadow"
+                    data-image="lipstick-rose.jpg"
+                    onclick="changeLipImage(this)"></button>
+            
+        </div>
+    </div>
+</div>
+
+
+                
+                <!-- Produit 2 -->
+                <div class="product-card relative">
+    <div class="relative pb-[125%] bg-gray-100">
+        <img id="gloss-image" src="gloss-rose.jpg" 
+             alt="Gloss fondant mat superieur" 
+             class="absolute h-full w-full object-cover transition duration-300 ease-in-out">
+        <span class="label label-nouveau">TENDANCES</span>
+    </div>
+    <div class="mt-4 text-center">
+        <h3 class="font-medium">Mary Mua Lips injection</h3>
+        <p class="text-sm text-gray-600 mt-1">injection lips</p>
+        <p class="font-bold mt-2">7000 FCFA</p>
+
+        <!-- Vignettes couleurs avec data-image -->
+        <div class="flex justify-center mt-3 space-x-2">
+            <button class="w-5 h-5 rounded-full border-2 border-white bg-pink-600 shadow"
+                    data-image="gloss-rose.jpg"
+                    onclick="changeLipImage(this)"></button>
+            <button class="w-5 h-5 rounded-full border-2 border-white bg-red-400 shadow"
+                    data-image="gloss-rouge.jpg"
+                    onclick="changeLipImage(this)"></button>
+            
+        </div>
+    </div>
+</div>
+
+                <!-- Produit 3 -->
+               <div class="product-card relative">
+    <div class="relative pb-[125%] bg-gray-100">
+        <img id="teinte-image" src="teinte-marron.jpg" 
+             alt="Gloss fondant mat superieur" 
+             class="absolute h-full w-full object-cover transition duration-300 ease-in-out">
+        <span class="label label-nouveau">CLASSIQUES</span>
+    </div>
+    <div class="mt-4 text-center">
+        <h3 class="font-medium">Mary Mua Teinte à Levres</h3>
+        <p class="text-sm text-gray-600 mt-1">teinte rouge à levre</p>
+        <p class="font-bold mt-2">7000 FCFA</p>
+
+        <!-- Vignettes couleurs avec data-image -->
+        <div class="flex justify-center mt-3 space-x-2">
+            <button class="w-5 h-5 rounded-full border-2 border-white bg-orange-600 shadow"
+                    data-image="teinte-marron.jpg"
+                    onclick="changeLipImage(this)"></button>
+            <button class="w-5 h-5 rounded-full border-2 border-white bg-pink-400 shadow"
+                    data-image="teinte-rose.jpg"
+                    onclick="changeLipImage(this)"></button>
+			<button class="w-5 h-5 rounded-full border-2 border-white bg-red-600 shadow"
+                    data-image="teinte-rouge.jpg"
+                    onclick="changeLipImage(this)"></button>
+            <button class="w-5 h-5 rounded-full border-2 border-white bg-pink-400 shadow"
+                    data-image="teinte-claire.jpg"
+                    onclick="changeLipImage(this)"></button>
+            
+        </div>
+    </div>
+</div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="border border-black px-8 py-3 inline-block font-medium hover:bg-black hover:text-white transition">
+                    VOIR TOUS LES PRODUITS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bannière Promotion -->
+    <section class="py-20 bg-cover bg-center" style="background-image: url('https://unsplash.com/fr/photos/l63BEYLez40&auto=format&fit=crop&w=1920&q=80')">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">-40% SUR LES ROUGES À LÈVRES</h2>
+            <p class="text-lg max-w-2xl mx-auto mb-8">Profitez de notre offre exceptionnelle pour une durée limitée. Des teintes vibrantes, une tenue parfaite.</p>
+            <a href="#" class="bg-black text-white px-8 py-3 inline-block font-medium hover:bg-gray-800 transition">
+                PROFITER DE L'OFFRE
+            </a>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <h2 class="text-3xl font-bold mb-4">INSCRIVEZ-VOUS À NOTRE NEWSLETTER</h2>
+            <p class="text-gray-600 mb-8">Recevez en exclusivité nos nouveautés, offres spéciales et conseils beauté.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="Votre adresse email" class="flex-grow newsletter-input bg-transparent py-3 px-2 text-center sm:text-left">
+                <button type="submit" class="bg-black text-white px-8 py-3 font-medium hover:bg-gray-800 transition">
+                    S'INSCRIRE
+                </button>
+            </form>
+            
+            <p class="text-xs text-gray-500 mt-4">En vous inscrivant, vous acceptez notre <a href="#" class="underline">Politique de Confidentialité</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">MARYMUA</h4>
+                    <p class="text-gray-400 text-sm">Maquillage professionnel crée sur mesure .</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">INFORMATIONS</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">À propos de nous</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Livraison</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Retours</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">LÉGAL</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Conditions générales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Confidentialité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">CONTACT</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">contact@marymua.com</li>
+                        <li class="text-gray-400">+225 07 47 51 12 61</li>
+                        <div class="flex space-x-4 mt-3">
+                            <a href="#"><i class="fab fa-instagram hover:text-rose-300 transition"></i></a>
+                            <a href="#"><i class="fab fa-tiktok hover:text-rose-300 transition"></i></a>
+                            <a href="#"><i class="fab fa-pinterest hover:text-rose-300 transition"></i></a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2025 Marymua. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Compte à rebours dynamique
+        function updateCountdown() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 3); // 3 jours à partir de maintenant
+            
+            const now = new Date();
+            const diff = endDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            document.querySelector('.promo-banner').innerHTML = 
+                `-40% SUR LES ROUGES À LÈVRES | FIN DANS <span class="font-bold">${days}J ${hours}H</span>`;
+        }
+        
+        // Initialisation
+        updateCountdown();
+        setInterval(updateCountdown, 3600000); // Mise à jour horaire
+        
+        // Filtres catégories
+        document.querySelectorAll('.category-filter').forEach(filter => {
+            filter.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.category-filter').forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+	
+	<script>
+    function changeLipImage(button) {
+        const newImage = button.getAttribute('data-image');
+        
+        // Trouver le div parent (product-card), puis l'image à modifier dedans
+        const productCard = button.closest('.product-card');
+        const img = productCard.querySelector('img');
+
+        if (img) {
+            img.src = newImage;
+        }
+
+        // Effet visuel : retirer le ring des autres boutons du même bloc
+        const allButtons = productCard.querySelectorAll("button[data-image]");
+        allButtons.forEach(btn => btn.classList.remove("ring", "ring-2", "ring-offset-2"));
+
+        button.classList.add("ring", "ring-2", "ring-offset-2");
+    }
+</script>
+
+
+	
+</body>
+</html>
